@@ -71,6 +71,6 @@ CREATE TABLE hall_ntc( ID int PRIMARY KEY,
     FOREIGN KEY(Type) REFERENCES user_type(ID),
     FOREIGN KEY(UploaderID) REFERENCES admin_up_table(ID));
 
--- INSERT into admin_up_table VALUES(2,'124','123','jkm','212','upload');
--- INSERT INTO admin_up_table VALUES(1,'14015439','14015439','Shabbir Mahmood','admin');
--- INSERT INTO admin_up_table VALUES(2,'14035440','14035440','Hasnain Mahmud','upload');
+INSERT INTO admin_up_table VALUES(1,'14015439','14015439','Shabbir Mahmood','admin');
+INSERT INTO admin_up_table VALUES(2,'14035440','14035440','Hasnain Mahmud','upload');
+INSERT INTO admin_up_table VALUES(3,'14025423','14025423','Jaggesher Mondal','admin');
