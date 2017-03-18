@@ -1,0 +1,222 @@
+html {
+    height: 100%;
+}
+
+body {
+    background: url("img/head1.jpg") no-repeat fixed center center;
+    font: 400 15px/1.8 Lato, sans-serif;
+    /*color: #777;*/
+    color: black;
+    height: 100%;
+}
+
+.nav-tabs li a {
+    color: #777;
+}
+
+.navbar {
+    font-family: Montserrat, sans-serif;
+    margin-bottom: 0;
+    background-color: #2d2d30;
+    border: 0;
+    font-size: 15px !important;
+    letter-spacing: 4px;
+    opacity: .9;
+    
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.navbar li a,
+.navbar .navbar-brand {
+    color: #d5d5d5 !important;
+}
+
+.navbar-nav li a:hover {
+    color: #fff !important;
+    background-color: #29292c !important;
+    /*color: white !important;
+      background-color: black !important;*/
+}
+
+.navbar-nav li.active a {
+    color: #fff !important;
+    background-color: #29292c !important;
+    /*color: white !important;
+      background-color: black !important;*/
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+}
+
+
+/*Model Style Begin*/
+/*Model Style Begin*/
+
+.modal.modal-fullscreen .modal-dialog {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.modal.modal-fullscreen .modal-content {
+    bottom: 0;
+    left: 0;
+    position: relative;
+    right: 0;
+    top: 0;
+    min-height: 100vh;
+}
+
+.modal.modal-fullscreen .modal-dialog {
+    margin: 0;
+    width: 100%;
+}
+
+.modal.modal-fullscreen .modal-content {
+    border: none;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    -webkit-box-shadow: inherit;
+    -moz-box-shadow: inherit;
+    -o-box-shadow: inherit;
+    box-shadow: inherit;
+    padding: 5px;
+}
+
+.modal.modal-fullscreen .modal-content .modal-header {
+    padding-top: 2px;
+    padding-right: 20px;
+    padding-bottom: 0px
+}
+
+.modal.modal-fullscreen .modal-content .modal-body {
+    padding: 5px;
+    margin: 0px;
+}
+
+
+/*Macking Crousal Background*/
+
+#myCarousel {
+    position: absolute;
+    z-index: -1 !important;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    padding: 80px 120px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 50px 20px;
+    }
+}
+
+/*Profile*/
+
+.cls2 {
+    background-color: rgba(0, 0, 0, .5);
+    min-height: 100vh;
+    width: 100%;
+}
+
+.clsSelect{
+  color:#FB667A;
+  padding: 3px 3px 5px 3px;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.cls3{
+    width: 100%;
+    background-color: rgba(0, 0, 0, .5);
+}
+/*These Belongs TO Footer*/
+
+footer {
+    /*background-color: #2d2d30;*/
+    background-color: #0F1012;
+    color: #f5f5f5;
+    padding: 12px;
+}
+
+footer a {
+    color: #f5f5f5;
+}
+
+footer a:hover {
+    color: #777;
+    text-decoration: none;
+}
+
+.up_head{
+    padding: 8px auto;
+    text-align: center;
+    height: 42px;
+    width: 100%;
+    font-size: 24px;
+    background-color: #0F1012;
+    opacity: .9;
+    /*border-radius: 8px;*/
+    color: white;
+}
+
+textarea{
+    resize:none;
+}
+
+
+.cls_ntc {
+    background-color: rgba(0, 0, 0, .7);
+    color: white;
+    margin: 3px 3px 10px 3px;
+    padding: 3px 3px 8px 3px;
+    -webkit-box-shadow: 0 6px 6px -6px #0E1119;
+    -moz-box-shadow: 0 6px 6px -6px #0E1119;
+    box-shadow: 0 6px 6px -6px #0E1119;
+}
+
+
+/*Slider Animation*/
+
+.slideanim {
+    visibility: hidden;
+}
+
+.slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+}
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+        transform: translateY(70%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@-webkit-keyframes slide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    }
+}
+
+/*Main Page Style End*/

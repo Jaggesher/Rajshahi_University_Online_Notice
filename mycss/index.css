@@ -1,0 +1,240 @@
+html {
+    height: 100%;
+}
+
+.carousel,
+.item,
+.active {
+    height: 100%;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+
+/* Background images are set within the HTML using inline CSS, not here */
+
+.fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+body {
+    font: 400 15px/1.8 Lato, sans-serif;
+    /*color: #777;*/
+    color: black;
+    height: 100%;
+}
+
+.nav-tabs li a {
+    color: #777;
+}
+
+.navbar {
+    font-family: Montserrat, sans-serif;
+    margin-bottom: 0;
+    background-color: #2d2d30;
+    border: 0;
+    font-size: 11px !important;
+    letter-spacing: 4px;
+    opacity: .9;
+    padding-right: 10px;
+}
+
+.navbar li a,
+.navbar .navbar-brand {
+    color: #d5d5d5 !important;
+}
+
+.navbar-nav li a:hover {
+    color: #fff !important;
+    background-color: #29292c !important;
+    /*color: white !important;
+      background-color: black !important;*/
+}
+
+.navbar-nav li.active a {
+    color: #fff !important;
+    background-color: #29292c !important;
+    /*color: white !important;
+      background-color: black !important;*/
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+}
+
+
+/*Model Style Begin*/
+
+.modal-header, h4, .close {
+      background-color: #333;
+      color: #fff !important;
+      text-align: center;
+      font-size: 30px;
+  }
+  .modal-header{
+      padding: 40px 50px;
+  }
+  .modal-body{
+    padding: 40px 50px;
+    background-color: transparent;
+  }
+  .btn {
+      padding: 7px 20px;
+      background-color: #333;
+      color: #f1f1f1;
+      border-radius: 10px;
+      transition: .2s;
+  }
+  .btn:hover, .btn:focus {
+      border: 1px solid #333;
+      background-color: #fff;
+      color: #000;
+  }
+
+/*Macking Crousal Background*/
+
+#myCarousel {
+    position: absolute;
+    z-index: -1 !important;
+    width: 100%;
+    height: 100%;
+}
+
+.cls1 {
+    position: absolute;
+    z-index: 1 !important;
+    width: 100%;
+}
+.container {
+    padding: 70px 100px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 50px 20px;
+    }
+    body{
+      background-color: white;
+    }
+}
+
+/*Profile*/
+
+.cls2 {
+    background-color: rgba(0, 0, 0, .3);
+    height: 100vh;
+    width: 100%;
+}
+
+.cls3{
+  padding: 0px;
+}
+
+
+/*These Belongs TO Footer*/
+
+footer {
+    /*background-color: #2d2d30;*/
+    background-color: #0F1012;
+    color: #f5f5f5;
+    padding: 12px;
+}
+
+footer a {
+    color: #f5f5f5;
+}
+
+footer a:hover {
+    color: #777;
+    text-decoration: none;
+}
+
+
+/*Register Block */
+
+div.RegBlock{
+    width: 100%;
+    padding: 15px;
+    background: rgba(0,0,0,.5);
+    border-radius: 5px;
+    margin: 0 auto;
+}
+div.RegBlock1{
+    width: 100%;
+    padding: 15px;
+    background: rgba(0,0,0,.5);
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+
+.Reg{
+  color: white;
+  font: 25px arial, sans-serif;
+  margin-bottom: 10px;
+}
+
+div.RegBlock input,div.RegBlock select{
+  background-color: rgba(0,0,0,.1);
+  color: white;
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 2px solid white;
+    margin-bottom: 15px;
+    font-size: 15px;
+    font-family: Montserrat;
+    padding: 0 20px 0 20px;
+    outline: none;
+}
+
+
+
+
+div.RegBlock input.readalart{
+    border-color: red;
+}
+
+
+div.RegBlock select.readalart{
+    border-color: red;
+}
+
+div.RegBlock input#userid:focus,div.RegBlock input#name:focus,div.RegBlock input#password:focus,div.RegBlock input#cpassword:focus,div.RegBlock input#bdate:focus,div.RegBlock input#UserType:focus{
+  border-color: rgba(0, 128, 255,.7);
+}
+
+div.RegBlock select#gender:focus{
+    border-color: rgba(0, 128, 255,.7);
+}
+
+div.RegBlock button {
+  margin-top:10px;
+    width: 100%;
+    height: 35px;
+    background: #3366ff;
+    box-sizing: border-box;
+    border-radius: 15px;
+    border: 2px solid white;
+    color: white;
+    font-weight: bold;
+    //text-transform: uppercase;
+    //font-size: 18px;
+    //font-family: Montserrat;
+    font: 18px arial, sans-serif;
+    outline: none;
+    cursor: pointer;
+}
+
+div.RegBlock button:active{
+  border-color: rgb(0, 128, 255);
+}
