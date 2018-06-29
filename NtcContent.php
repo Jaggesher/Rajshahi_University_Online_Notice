@@ -8,6 +8,7 @@
 		$HalID=$_POST["HalID"];
 		$UsrID=$_POST["UsrID"];
 		include 'dbconnect.php';
+        date_default_timezone_set('Asia/Dhaka');
 		$curDate=date("Y-m-d");
 
 		function check_in_range($start_date, $end_date, $date_from_user)
