@@ -1,7 +1,7 @@
 <?php
 	
 	if(TRUE){
-
+        session_start();
 		$CatID=$_POST["CatID"];
 		$FacID=$_POST["FacID"];
 		$DeptID=$_POST["DeptID"];
@@ -23,17 +23,24 @@
 			}
 
 		if($CatID=="General"){
-			$sql='SELECT general_ntc.Message AS msg, general_ntc.StartDat AS st,general_ntc.EndDat AS et,admin_up_table.Name AS name FROM general_ntc INNER JOIN admin_up_table  ON general_ntc.UploaderID=admin_up_table.ID AND general_ntc.Type='.$UsrID;
+			$sql='SELECT general_ntc.id AS id,general_ntc.Message AS msg, general_ntc.StartDat AS st,general_ntc.EndDat AS et,admin_up_table.Name AS name FROM general_ntc INNER JOIN admin_up_table  ON general_ntc.UploaderID=admin_up_table.ID AND general_ntc.Type='.$UsrID;
 
 			$result = $conn->query($sql);
 			if($result->num_rows>0){
 				while($row = $result->fetch_assoc()) {
 
 				if( check_in_range($row["st"] ,$row["et"] , $curDate)){
-
+                    $temp= "G".$row['id'];
 					echo'
-							<div class="container-fluid text-center cls_ntc slideanim">
-			            </br>
+							<div class="container-fluid text-center cls_ntc slideanim">';
+
+					if( isset($_SESSION['Type']) && $_SESSION['Type']=="admin") {
+                        echo '<button  style="background-color:transparent" type="button" style="border:none;" class="btn btn-default btn-sm pull-right btndelntc" data-toggle="tooltip" data-placement="bottom" title="Remove" value="' . $temp . '">
+		                    <span style="color:white" class="glyphicon glyphicon-remove"></span>
+		                    </button>';
+                    }
+		                    
+			        echo    '</br>
 					<p>'.$row["msg"].'</p>
 					</br>
 					<div class="col-sm-8 text-left" style="color:#FB667A;">
@@ -68,16 +75,24 @@
 			}
 
 		}else if($CatID=="Administrative"){
-			$sql='SELECT admin_ntc.Message AS msg, admin_ntc.StartDat AS st,admin_ntc.EndDat AS et,admin_up_table.Name AS name FROM admin_ntc INNER JOIN admin_up_table  ON admin_ntc.UploaderID=admin_up_table.ID AND admin_ntc.Type='.$UsrID;
+			$sql='SELECT admin_ntc.id as id, admin_ntc.Message AS msg, admin_ntc.StartDat AS st,admin_ntc.EndDat AS et,admin_up_table.Name AS name FROM admin_ntc INNER JOIN admin_up_table  ON admin_ntc.UploaderID=admin_up_table.ID AND admin_ntc.Type='.$UsrID;
 
 			$result = $conn->query($sql);
-			if($result->num_rows>0){
-				while($row = $result->fetch_assoc()) {
-					if( check_in_range($row["st"] ,$row["et"] , $curDate)){
+            if($result->num_rows>0){
+                while($row = $result->fetch_assoc()) {
 
-					echo'
-							<div class="container-fluid text-center cls_ntc slideanim">
-			            </br>
+                    if( check_in_range($row["st"] ,$row["et"] , $curDate)){
+                        $temp= "A".$row['id'];
+                        echo'
+							<div class="container-fluid text-center cls_ntc slideanim">';
+
+                        if( isset($_SESSION['Type']) && $_SESSION['Type']=="admin") {
+                            echo '<button  style="background-color:transparent" type="button" style="border:none;" class="btn btn-default btn-sm pull-right btndelntc" data-toggle="tooltip" data-placement="bottom" title="Remove" value="' . $temp . '">
+		                    <span style="color:white" class="glyphicon glyphicon-remove"></span>
+		                    </button>';
+                        }
+
+                        echo    '</br>
 					<p>'.$row["msg"].'</p>
 					</br>
 					<div class="col-sm-8 text-left" style="color:#FB667A;">
@@ -89,10 +104,11 @@
 						<p align="right" style="font-size:15px;">'.$row["name"].'</p>
 						</div>
 				</div>';
+                    }
 
-			}
-				}
-			}else{
+
+                }
+            }else{
 
 				echo '
 				<div class="container-fluid text-center cls_ntc slideanim">
@@ -113,16 +129,24 @@
 
 		}else if($CatID=="Hall Related"){
 
-			$sql='SELECT hall_ntc.Message AS msg, hall_ntc.StartDat AS st,hall_ntc.EndDat AS et,admin_up_table.Name AS name FROM hall_ntc INNER JOIN admin_up_table  ON hall_ntc.UploaderID=admin_up_table.ID AND hall_ntc.Type='.$UsrID.' AND hall_ntc.Hall="'.$HalID.'"';
+			$sql='SELECT hall_ntc.id AS id, hall_ntc.Message AS msg, hall_ntc.StartDat AS st,hall_ntc.EndDat AS et,admin_up_table.Name AS name FROM hall_ntc INNER JOIN admin_up_table  ON hall_ntc.UploaderID=admin_up_table.ID AND hall_ntc.Type='.$UsrID.' AND hall_ntc.Hall="'.$HalID.'"';
 
 			$result = $conn->query($sql);
-			if($result->num_rows>0){
-				while($row = $result->fetch_assoc()) {
-					if( check_in_range($row["st"] ,$row["et"] , $curDate)){
+            if($result->num_rows>0){
+                while($row = $result->fetch_assoc()) {
 
-					echo'
-							<div class="container-fluid text-center cls_ntc slideanim">
-			            </br>
+                    if( check_in_range($row["st"] ,$row["et"] , $curDate)){
+                        $temp= "H".$row['id'];
+                        echo'
+							<div class="container-fluid text-center cls_ntc slideanim">';
+
+                        if( isset($_SESSION['Type']) && $_SESSION['Type']=="admin") {
+                            echo '<button  style="background-color:transparent" type="button" style="border:none;" class="btn btn-default btn-sm pull-right btndelntc" data-toggle="tooltip" data-placement="bottom" title="Remove" value="' . $temp . '">
+		                    <span style="color:white" class="glyphicon glyphicon-remove"></span>
+		                    </button>';
+                        }
+
+                        echo    '</br>
 					<p>'.$row["msg"].'</p>
 					</br>
 					<div class="col-sm-8 text-left" style="color:#FB667A;">
@@ -134,10 +158,11 @@
 						<p align="right" style="font-size:15px;">'.$row["name"].'</p>
 						</div>
 				</div>';
-			}
+                    }
 
-				}
-			}else{
+
+                }
+            }else{
 
 				echo '
 				<div class="container-fluid text-center cls_ntc slideanim">
@@ -158,15 +183,24 @@
 
 		}else if($CatID=="Faculty"){
 
-			$sql='SELECT faculty_ntc.Message AS msg, faculty_ntc.StartDat AS st,faculty_ntc.EndDat AS et,admin_up_table.Name AS name FROM faculty_ntc INNER JOIN admin_up_table  ON faculty_ntc.UploaderID=admin_up_table.ID AND faculty_ntc.Type='.$UsrID.' AND faculty_ntc.Faculty="'.$FacID.'" AND faculty_ntc.Dept="'.$DeptID.'"';
+			$sql='SELECT faculty_ntc.id as id, faculty_ntc.Message AS msg, faculty_ntc.StartDat AS st,faculty_ntc.EndDat AS et,admin_up_table.Name AS name FROM faculty_ntc INNER JOIN admin_up_table  ON faculty_ntc.UploaderID=admin_up_table.ID AND faculty_ntc.Type='.$UsrID.' AND faculty_ntc.Faculty="'.$FacID.'" AND faculty_ntc.Dept="'.$DeptID.'"';
 
 			$result = $conn->query($sql);
-			if($result->num_rows>0){
-				while($row = $result->fetch_assoc()) {
-					if( check_in_range($row["st"] ,$row["et"] , $curDate)){
-					echo'
-							<div class="container-fluid text-center cls_ntc slideanim">
-			            </br>
+            if($result->num_rows>0){
+                while($row = $result->fetch_assoc()) {
+
+                    if( check_in_range($row["st"] ,$row["et"] , $curDate)){
+                        $temp= "F".$row['id'];
+                        echo'
+							<div class="container-fluid text-center cls_ntc slideanim">';
+
+                        if( isset($_SESSION['Type']) && $_SESSION['Type']=="admin") {
+                            echo '<button  style="background-color:transparent" type="button" style="border:none;" class="btn btn-default btn-sm pull-right btndelntc" data-toggle="tooltip" data-placement="bottom" title="Remove" value="' . $temp . '">
+		                    <span style="color:white" class="glyphicon glyphicon-remove"></span>
+		                    </button>';
+                        }
+
+                        echo    '</br>
 					<p>'.$row["msg"].'</p>
 					</br>
 					<div class="col-sm-8 text-left" style="color:#FB667A;">
@@ -178,10 +212,11 @@
 						<p align="right" style="font-size:15px;">'.$row["name"].'</p>
 						</div>
 				</div>';
-			}
+                    }
 
-				}
-			}else{
+
+                }
+            }else{
 
 				echo '
 				<div class="container-fluid text-center cls_ntc slideanim">
@@ -204,4 +239,21 @@
 	}
 
 	$conn->close();
+
 ?>
+
+<script !src="">
+    $(document).ready(function() {
+        $("#NtcCont").find(".btndelntc").click(function () {
+            var Tm=$(this).val();
+            $.post("del_ntc.php",{Tm:Tm},function(data){
+                if(data=="OK"){
+                    // alert("ok");
+                    $('#SowNTC').trigger('click');
+                }else{
+                    alert(data);
+                }
+            });
+        })
+    });
+</script>
