@@ -34,7 +34,7 @@
 					echo'
 							<div class="container-fluid text-center cls_ntc slideanim">';
 
-					if( isset($_SESSION['Type']) && $_SESSION['Type']=="admin") {
+					 if( isset($_SESSION['Type']) && ($_SESSION['Type']=="admin" || $_SESSION['Type']=="upload")){
                         echo '<button  style="background-color:transparent" type="button" style="border:none;" class="btn btn-default btn-sm pull-right btndelntc" data-toggle="tooltip" data-placement="bottom" title="Remove" value="' . $temp . '">
 		                    <span style="color:white" class="glyphicon glyphicon-remove"></span>
 		                    </button>';
@@ -86,7 +86,7 @@
                         echo'
 							<div class="container-fluid text-center cls_ntc slideanim">';
 
-                        if( isset($_SESSION['Type']) && $_SESSION['Type']=="admin") {
+                        if( isset($_SESSION['Type']) && ($_SESSION['Type']=="admin" || $_SESSION['Type']=="upload")) {
                             echo '<button  style="background-color:transparent" type="button" style="border:none;" class="btn btn-default btn-sm pull-right btndelntc" data-toggle="tooltip" data-placement="bottom" title="Remove" value="' . $temp . '">
 		                    <span style="color:white" class="glyphicon glyphicon-remove"></span>
 		                    </button>';
@@ -140,7 +140,7 @@
                         echo'
 							<div class="container-fluid text-center cls_ntc slideanim">';
 
-                        if( isset($_SESSION['Type']) && $_SESSION['Type']=="admin") {
+                         if( isset($_SESSION['Type']) && ($_SESSION['Type']=="admin" || $_SESSION['Type']=="upload")){
                             echo '<button  style="background-color:transparent" type="button" style="border:none;" class="btn btn-default btn-sm pull-right btndelntc" data-toggle="tooltip" data-placement="bottom" title="Remove" value="' . $temp . '">
 		                    <span style="color:white" class="glyphicon glyphicon-remove"></span>
 		                    </button>';
@@ -194,7 +194,7 @@
                         echo'
 							<div class="container-fluid text-center cls_ntc slideanim">';
 
-                        if( isset($_SESSION['Type']) && $_SESSION['Type']=="admin") {
+                        if( isset($_SESSION['Type']) && ($_SESSION['Type']=="admin" || $_SESSION['Type']=="upload")) {
                             echo '<button  style="background-color:transparent" type="button" style="border:none;" class="btn btn-default btn-sm pull-right btndelntc" data-toggle="tooltip" data-placement="bottom" title="Remove" value="' . $temp . '">
 		                    <span style="color:white" class="glyphicon glyphicon-remove"></span>
 		                    </button>';
